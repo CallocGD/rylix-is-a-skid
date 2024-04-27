@@ -4,7 +4,7 @@ This repository contains a fully decompiled version of every one of Rylixmods' f
 # Credits   
 - Harm (uploading the repo while Todd GD is shadowbanned)
 - Calloc (me, Forked Harm's repository and Reverse engineered the parts that the python decompilers couldn't quite get or do correctly, It took me quite a bit of time as well) This was the first Program I had ever reversed and there were some tricky shit I had to figure out.
-- RadzikanistraMod (Provided extra background information about some of the other abusive things going at the time, Thank you for helping us!)
+- xxend3rxx (provided fixes for the hacks with more accurancy and updated/working code)
 - Todd GD (made a video about this and that was it)  
 - CNSL (Sat down with a decompiler but it failed to get all the code and revealed that this had some very malicous shit inside of the application.)
 
