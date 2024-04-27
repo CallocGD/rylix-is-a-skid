@@ -14,7 +14,7 @@ This repository contains a fully decompiled version of every one of Rylixmods' f
 - To Prove that the others involved didn't actually sit down and read python's assembly bytecodes like I did
 - For Malware Scanners to trigger these tools as malicious software (I got my wish btw which is good news). 
 - To stop people from having their discord tokens and personal information abused.
-- Unlike these other volunteers (Except for Radz and Harm who I give most of my thanks to) I felt like there wasn't enough research done on something this dense and it felt wrong to me that the code wasn't being fully reverse engineered until I stepped in and took over.  
+- Unlike these other volunteers (Except for xxend3rxx and Harm who I give most of my thanks to) I felt like there wasn't enough research done on something this dense and it felt wrong to me that the code wasn't being fully reverse engineered until I stepped in and took over.  
 
 I Calloc, Will be archiving this repository very soon. 
 
@@ -39,7 +39,7 @@ https://www.youtube.com/watch?v=aIoMizTaydk
 
 # UPDATES
  ![alt text](https://media.discordapp.net/attachments/1132386115622543421/1139318968096665711/image.png?width=1025&height=155)
-- As of 8/10/2023 Me and RadzikanistraMod have been banned from his server and it seems to us that he enjoys censoring us, this is typical for anyone that wishes to weasel out of an argument.
+- As of 8/10/2023 Me and xxend3rxx have been banned from his server and it seems to us that he enjoys censoring us, this is typical for anyone that wishes to weasel out of an argument.
 - During that time It had encouraged me to finish up the decomp and now we just need to match the bytecodes up afterwards...
 - I Have no doubt that I'm now 100% Done with the decomplation and I'll be trying to get people to come and see this fork
 If needed I'll change the name of this repository. or ask if harm can forward people to my full crack of his code...
