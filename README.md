@@ -47,6 +47,7 @@ If needed I'll change the name of this repository. or ask if harm can forward pe
 - 3-8-2024 Rylix has since changed completely which is a good thing.
 
 
-- [3-18-2024] At this point intime there isn't really much to say. It's all finished now and I have no plans on revisiting this repo. It will likely be archived soon to educate the public about malware.
- 
+- 3-18-2024 At this point intime there isn't really much to say. It's all finished now and I have no plans on revisiting this repo. It will likely be archived soon to educate the public about malware.
+
+- 5-3-2024 Verification tools are planned for the future to see if we can get a 1 to 1 match of the malware...
 
