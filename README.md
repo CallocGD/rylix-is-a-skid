@@ -14,7 +14,7 @@ This repository contains a fully decompiled version of every one of Rylixmods' f
 - To Prove that the others involved didn't actually sit down and read python's assembly bytecodes like I did
 - For Malware Scanners to trigger these tools as malicious software (I got my wish btw which is good news). 
 - To stop people from having their discord tokens and personal information abused.
-- Unlike these other volunteers (Except for xxend3rxx and Harm who I give most of my thanks to) I felt like there wasn't enough research done on something this dense and it felt wrong to me that the code wasn't being fully reverse engineered until I stepped in and took over.  
+- Unlike these other volunteers (Except for xxend3rxx who I give most of my thanks to) I felt like there wasn't enough research done on something this dense and it felt wrong to me that the code wasn't being fully reverse engineered until I stepped in and took over.  
 
 I Calloc, Will be archiving this repository very soon. 
 
